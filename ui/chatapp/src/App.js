@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import io from "socket.io-client";
 const socket = io.connect("http://localhost:5037");
 function App() {
-  const [messages, setMessages] = useState([]);
+  const [allMessages, setAllMessages] = useState([]);
   const [newMsg, setNewMsg] = useState('');
   const API_URL = "http://localhost:5037/";
   useEffect(() => {
@@ -14,7 +14,7 @@ function App() {
   function refreshMessages() {
     fetch(API_URL + "api/chatapp/getmessages").then(response => response.json())
       .then(data => {
-        setMessages(data);
+        setAllMessages(data);
       })
   }
   function Submit(Msg) {
@@ -62,7 +62,7 @@ function App() {
       </h1>
       <input id='newmsg' type='text' onChange={(e) => setNewMsg(e.target.value)} />
       <button onClick={() => Submit(newMsg)}>Send</button>
-      {messages.map(msg => (
+      {allMessages.map(msg => (
         <div key={msg.id}>
           <p>{msg.id}</p>
           <p>{msg.sender}</p>
