@@ -1,6 +1,0 @@
-API folder:
- npm init -y
- npm install express --save
- npm install cors
- npm install mongodb@4.1.0 --save
- npm install multer --save
