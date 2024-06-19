@@ -1,25 +1,31 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
 body {
 	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/bg.png");
 	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* dark mode looking scrollbar */
 ::-webkit-scrollbar {
 	width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-	background: #555;
+	background: #7a83fc;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #121212;
+	background: #030263;
 	border-radius: 5px;
 }
 
